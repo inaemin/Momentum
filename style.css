@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: auto;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 20vw);
+    grid-template-rows: repeat(4, 20vh);
+    column-gap: 2vw;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.login {
+    grid-area: 1/2/2/4;
+    justify-self: start;
+    align-self: end;
+    font-weight: 600;
+    font-size: 2vw;
+}
+
+#login {
+    grid-area: 1/2/2/4;
+    justify-self: start;
+    align-self: end;
+    font-weight: 600;
+    font-size: 2vw;
+}
+
+#login input {
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,1);
+    background-color: rgba(255,255,255,0);
+    width: 10vw;
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2vw;
+}
+    
+
+#login input::placeholder {
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2vw;
+  }
+
+#login button {
+    font-weight: 600;
+    font-size: 2vw;
+    background-color: rgba(255,255,255,0);
+    border: none;
+}
+
+.weather {
+    grid-area: 1/1/-1/2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 3fr 3fr 3fr 2fr 2fr;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+}
+
+.date {
+    text-align: center;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    background-color: rgba(255,255,255,0.5);
+    color: black;
+    font-weight: bold;
+    font-size: 1.8vw;
+}
+
+.temp-wrapper {
+    padding: 1vw;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.5);
+    display: grid;
+    align-content: center;
+}
+.temp {
+    text-align: left;
+    color: black;
+    font-size: 1.3vw;
+}
+
+.airpol {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5vw;
+    -webkit-text-stroke: 1px #000;
+    text-align: center;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+}
+
+.PM10 {
+    grid-column: 1 / -1;
+    grid-row: -2 span;
+}
+
+.PM2_5 {
+    grid-column: 1 / -1;
+    grid-row: -1 span;
+}
+
+.clock {
+    grid-area: 2/2/3/4;
+    font-size: 10vw;
+    font-family: 'Roboto Mono', monospace;
+    align-self: start;
+    text-align: center;
+    letter-spacing: -1vw;
+}
+
+.day {
+    grid-area: 3/2/4/4;
+    font-size: 3vw;
+    align-self: center;
+    text-align: center;
+    padding-top: 0.1vw;
+}
+
+.todo {
+    grid-area: 1/-2/-1/-1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2vw auto;
+    align-items: start;
+
+}
+
+#todo-form input {
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,1);
+    background-color: rgba(255,255,255,0);
+    width: 20vw;
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2vw;
+}
+
+#todo-form input::placeholder {
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2vw;
+  }
+
+#todo-list {
+    padding: 2vw;
+}
+
+.quotes {
+    grid-area: -2/2/-1/4;
+
+}
