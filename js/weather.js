@@ -10,7 +10,6 @@ function geoSuccess(position) {
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${API_KEY}&units=metric`;
     const air_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`
     fetch(url).then(response => response.json()).then((data) => {
-        console.log(url)
         const first = data.daily[0];
         const second = data.daily[1];
         const third = data.daily[2];
