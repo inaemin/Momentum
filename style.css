@@ -58,13 +58,6 @@ body {
     font-size: 2vw;
   }
 
-#login button {
-    font-weight: 600;
-    font-size: 2vw;
-    background-color: rgba(255,255,255,0);
-    border: none;
-}
-
 .weather {
     grid-area: 1/1/-1/2;
     display: grid;
@@ -165,17 +158,23 @@ body {
   }
 
 #todo-list {
-    padding: 2vw;
     list-style:none;
-    padding-left:0px;
+    padding-left: 0;
+    font-size: 2vw;
+    font-weight: 600;
+}
 
+#todo-list > li {
+    display: flex;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
 #todo-list button {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
     background-color: rgba(255,255,255,0);
     border: none;
+    text-align: center;
 }
 
 .quotes {
