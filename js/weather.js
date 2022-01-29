@@ -2,6 +2,10 @@ const API_KEY = "29fa091b7e7e837d3eff910937e22844";
 
 function geoFail() {
     alert("위치정보가 없어 날씨를 불러올 수 없습니다.");
+    document.querySelector(".PM10").style.backgroundColor = "rgba(255,255,255,0.5)";
+    document.querySelector(".PM10").innerText = "미세먼지를 불러올 수 없습니다";
+    document.querySelector(".PM2_5").style.backgroundColor = "rgba(255,255,255,0.5)";
+    document.querySelector(".PM2_5").innerText = "초미세먼지를 불러올 수 없습니다";
 };
 
 function geoSuccess(position) {
@@ -20,32 +24,45 @@ function geoSuccess(position) {
     });
 
     fetch(air_url).then(response => response.json()).then((data) => {
+        const colors = [ "rgba(225, 36, 64, 0.5)", "rgba(254, 79, 59, 0.5)", "rgba(254, 122, 15, 0.5)", "rgba(248, 204, 97, 0.5)", "rgba(81, 194, 166, 0.5)", "rgba(83, 198, 203, 0.5)", "rgba(76, 202, 225, 0.5)", "rgba(80, 166, 249, 0.5)" ];
         const PM2_5 = data.list[0].components.pm2_5;
         const PM10 = data.list[0].components.pm10;
         document.querySelector(".PM10").innerHTML = "미세먼지(PM10)<br>" + `${PM10}`; //미세먼지
         document.querySelector(".PM2_5").innerHTML = "초미세먼지(PM2.5)<br>" + `${PM2_5}`; //초미세먼지
-        if (PM10 < 25) {
-            document.querySelector(".PM10").style.backgroundColor = "rgba(0, 0, 255, 0.5)";
-        } else if (25 <= PM10 < 50) {
-            document.querySelector(".PM10").style.backgroundColor = "rgba(0, 128, 0, 0.5)";
-        } else if (50 <= PM10 < 90 ){
-            document.querySelector(".PM10").style.backgroundColor = "rgba(255, 255, 0, 0.5)";
-        } else if (90 <= PM10 < 180) {
-            document.querySelector(".PM10").style.backgroundColor = "rgba(255, 0, 0, 0.5)";
-        } else {
-            document.querySelector(".PM10").style.backgroundColor = "rgba(128, 0, 128, 0.5)";
+        if (PM10 < 16) {
+            document.querySelector(".PM10").style.backgroundColor = colors[8];    
+        } else if (16 <= PM10 < 31) {
+            document.querySelector(".PM10").style.backgroundColor = colors[7];
+        } else if (31 <= PM10 < 41 ){
+            document.querySelector(".PM10").style.backgroundColor = colors[6];
+        } else if (41 <= PM10 < 51) {
+            document.querySelector(".PM10").style.backgroundColor = colors[5];
+        } else if (51 <= PM10 < 76) {
+            document.querySelector(".PM10").style.backgroundColor = colors[4];
+        } else if (76 <= PM10 < 101) {
+            document.querySelector(".PM10").style.backgroundColor = colors[3];
+        } else if (101 <= PM10 < 151) {
+            document.querySelector(".PM10").style.backgroundColor = colors[2];
+        } else if (PM10 >= 151) {
+            document.querySelector(".PM10").style.backgroundColor = colors[1];
         };
         
-        if (PM2_5 < 15) {
-            document.querySelector(".PM2_5").style.backgroundColor = "rgba(0, 0, 255, 0.5)";
-        } else if (15 <= PM2_5 < 30) {
-            document.querySelector(".PM2_5").style.backgroundColor = "rgba(0, 128, 0, 0.5)";
-        } else if (30 <= PM2_5 < 55 ){
-            document.querySelector(".PM2_5").style.backgroundColor = "rgba(255, 255, 0, 0.5)";
-        } else if (55 <= PM2_5 < 110) {
-            document.querySelector(".PM2_5").style.backgroundColor = "rgba(255, 0, 0, 0.5)";
-        } else {
-            document.querySelector(".PM2_5").style.backgroundColor = "rgba(128, 0, 128, 0.5)";
+        if (PM2_5 < 9) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[8];
+        } else if (9 <= PM2_5 < 16) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[7];
+        } else if (16 <= PM2_5 < 21 ){
+            document.querySelector(".PM2_5").style.backgroundColor = colors[6];
+        } else if (21 <= PM2_5 < 26) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[5];
+        } else if (26 <= PM2_5 < 38) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[4];
+        } else if (38 <= PM2_5 < 51) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[3];
+        } else if (51 <= PM2_5 < 76) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[2];
+        } else if (PM2_5 >= 76) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[1];
         };
     });
 };
