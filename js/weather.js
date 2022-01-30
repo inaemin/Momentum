@@ -30,39 +30,39 @@ function geoSuccess(position) {
         document.querySelector(".PM10").innerHTML = "미세먼지(PM10)<br>" + `${PM10}`; //미세먼지
         document.querySelector(".PM2_5").innerHTML = "초미세먼지(PM2.5)<br>" + `${PM2_5}`; //초미세먼지
         if (PM10 < 16) {
-            document.querySelector(".PM10").style.backgroundColor = colors[8];    
+            document.querySelector(".PM10").style.backgroundColor = colors[7];    
         } else if (16 <= PM10 < 31) {
-            document.querySelector(".PM10").style.backgroundColor = colors[7];
-        } else if (31 <= PM10 < 41 ){
             document.querySelector(".PM10").style.backgroundColor = colors[6];
-        } else if (41 <= PM10 < 51) {
+        } else if (31 <= PM10 < 41 ){
             document.querySelector(".PM10").style.backgroundColor = colors[5];
-        } else if (51 <= PM10 < 76) {
+        } else if (41 <= PM10 < 51) {
             document.querySelector(".PM10").style.backgroundColor = colors[4];
-        } else if (76 <= PM10 < 101) {
+        } else if (51 <= PM10 < 76) {
             document.querySelector(".PM10").style.backgroundColor = colors[3];
-        } else if (101 <= PM10 < 151) {
+        } else if (76 <= PM10 < 101) {
             document.querySelector(".PM10").style.backgroundColor = colors[2];
-        } else if (PM10 >= 151) {
+        } else if (101 <= PM10 < 151) {
             document.querySelector(".PM10").style.backgroundColor = colors[1];
+        } else if (PM10 >= 151) {
+            document.querySelector(".PM10").style.backgroundColor = colors[0];
         };
         
         if (PM2_5 < 9) {
-            document.querySelector(".PM2_5").style.backgroundColor = colors[8];
-        } else if (9 <= PM2_5 < 16) {
             document.querySelector(".PM2_5").style.backgroundColor = colors[7];
-        } else if (16 <= PM2_5 < 21 ){
+        } else if (9 <= PM2_5 < 16) {
             document.querySelector(".PM2_5").style.backgroundColor = colors[6];
-        } else if (21 <= PM2_5 < 26) {
+        } else if (16 <= PM2_5 < 21 ){
             document.querySelector(".PM2_5").style.backgroundColor = colors[5];
-        } else if (26 <= PM2_5 < 38) {
+        } else if (21 <= PM2_5 < 26) {
             document.querySelector(".PM2_5").style.backgroundColor = colors[4];
-        } else if (38 <= PM2_5 < 51) {
+        } else if (26 <= PM2_5 < 38) {
             document.querySelector(".PM2_5").style.backgroundColor = colors[3];
-        } else if (51 <= PM2_5 < 76) {
+        } else if (38 <= PM2_5 < 51) {
             document.querySelector(".PM2_5").style.backgroundColor = colors[2];
-        } else if (PM2_5 >= 76) {
+        } else if (51 <= PM2_5 < 76) {
             document.querySelector(".PM2_5").style.backgroundColor = colors[1];
+        } else if (PM2_5 >= 76) {
+            document.querySelector(".PM2_5").style.backgroundColor = colors[0];
         };
     });
 };
